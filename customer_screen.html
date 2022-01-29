@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customer Screen</title>
+    <link rel="stylesheet" href="customer_screen.css">
+    <style media="screen">
+      body {
+
+        background-image: url(https://c0.wallpaperflare.com/preview/222/411/586/chart-trading-courses-forex.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="base">Hello guys! Looking for some stocks !!!<h2>
+    <form>
+      <label for="Search Stock"><b id="ss">Search Stock</b></label><br>
+      <select>
+        <option id="1" value="DBS">DBS</option>
+        <option id="2" value="Amazon">Amazon</option>
+        <option id="3" value="Facebook">Facebook</option>
+        <option id="4" value="Apple">Apple</option>
+      </select>
+      <br><br>
+      <b id="ot">Order Type</b>
+      <br>
+
+      <select id="ddlModels" onchange="EnableDisableTextBox(this)">
+        <option id="m" value="1">Market</option>
+        <option id="l " value="2">Limit</option>
+      </select>
+      <br><br>
+
+      <script type="text/javascript">
+       function EnableDisableTextBox(ddlModels) {
+           var selectedValue = ddlModels.options[ddlModels.selectedIndex].value;
+           var txtOther = document.getElementById("txtOther");
+           txtOther.disabled = selectedValue == 2 ? false : true;
+           if (!txtOther.disabled) {
+               txtOther.focus();
+           }
+       }
+   </script>
+
+      <b id = "p">Price</b>
+      <br>
+      <input type="text" id="txtOther" disabled="disabled" />
+      <br><br>
+      <b id = "q">Quantity</b>
+      <br>
+      <input type="number" min="1" value="Quantity">
+      <br><br>
+      <a href="success.html" ><input type="button" value="Place Order" id = "btn"></a>
+
+
+    </form>
+    <br><br>
+  </body>
+</html>
